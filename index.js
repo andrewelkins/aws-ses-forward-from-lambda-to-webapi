@@ -5,8 +5,8 @@ const request = require('requestretry');
 const s3 = new AWS.S3();
 
 // Update the emailDomain environment variable to the correct domain, e.g. <MYDOMAIN>.com
-const endpoint = process.env.endpoint;
-const bucketName = process.env.s3bucket;
+const endpoint = process.env.ENDPOINT;
+const bucketName = process.env.S3BUCKET;
 
 exports.handler = (event, context, callback) => {
     const sesNotification = event.Records[0].ses;
